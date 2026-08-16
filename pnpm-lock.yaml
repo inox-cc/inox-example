@@ -1,0 +1,70 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+overrides:
+  '@inox-cc/inox-darwin-arm64': file:../inox/dist/npm/packages/inox-darwin-arm64
+  mongodb: file:../mongodb
+
+importers:
+
+  .:
+    dependencies:
+      mongodb:
+        specifier: file:../mongodb
+        version: '@inox-cc/mongodb@file:../mongodb(@inox-cc/inox@inox+dist+npm+packages+inox)'
+    devDependencies:
+      '@inox-cc/inox':
+        specifier: link:../inox/dist/npm/packages/inox
+        version: link:../inox/dist/npm/packages/inox
+      '@types/node':
+        specifier: 26.1.1
+        version: 26.1.1
+      prettier:
+        specifier: ^3.9.5
+        version: 3.9.5
+      typescript:
+        specifier: 6.0.3
+        version: 6.0.3
+
+packages:
+
+  '@inox-cc/mongodb@file:../mongodb':
+    resolution: {directory: ../mongodb, type: directory}
+    engines: {node: '>=24'}
+    peerDependencies:
+      '@inox-cc/inox': 0.0.1
+
+  '@types/node@26.1.1':
+    resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
+
+  prettier@3.9.5:
+    resolution: {integrity: sha512-/FVl766LpUfB5vXgCYOYa0MeV/441Ia99AeICQIQFTY/Nw0roZwULcXpku5i1/m5kt/baz+s4Zogspd839HSMg==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
+
+snapshots:
+
+  '@inox-cc/mongodb@file:../mongodb(@inox-cc/inox@inox+dist+npm+packages+inox)':
+    dependencies:
+      '@inox-cc/inox': link:../inox/dist/npm/packages/inox
+
+  '@types/node@26.1.1':
+    dependencies:
+      undici-types: 8.3.0
+
+  prettier@3.9.5: {}
+
+  typescript@6.0.3: {}
+
+  undici-types@8.3.0: {}

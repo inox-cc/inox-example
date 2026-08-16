@@ -1,0 +1,30 @@
+{
+  "name": "inox-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "inox build src/index.ts --name inox-example",
+    "build:simple": "inox build src/simple.ts --name inox-example-simple",
+    "start": "inox run src/index.ts --name inox-example",
+    "start:debug": "inox run src/index.ts --name inox-example --debug",
+    "start:simple": "inox run src/simple.ts --name inox-example-simple",
+    "build:npx": "npx --cache=../inox/dist/npm/npm-cache --offline --yes --package='file:../inox/dist/npm/packages/inox' --package='file:../inox/dist/npm/packages/inox-darwin-arm64' -- inox build src/simple.ts --name inox-example-simple-npx",
+    "package:inox": "node ../inox/scripts/package-npm.ts",
+    "lint": "prettier . --check",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.21.0",
+  "dependencies": {
+    "mongodb": "git+ssh://git@github.com/inox-cc/mongodb.git#master"
+  },
+  "devDependencies": {
+    "@inox-cc/inox": "link:../inox/dist/npm/packages/inox",
+    "@types/node": "26.1.1",
+    "prettier": "^3.9.5",
+    "typescript": "6.0.3"
+  }
+}

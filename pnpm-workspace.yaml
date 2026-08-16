@@ -1,0 +1,5 @@
+minimumReleaseAge: 43200 # 30 days
+
+overrides:
+  '@inox-cc/inox-darwin-arm64': file:../inox/dist/npm/packages/inox-darwin-arm64
+  mongodb: file:../mongodb
